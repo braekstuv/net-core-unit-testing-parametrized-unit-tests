@@ -8,6 +8,6 @@ namespace StudentApp.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public ICollection<Grade> Grades {get;set;}
+        public List<Grade> Grades {get;set;} = new List<Grade>();
     }
 }

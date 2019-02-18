@@ -26,8 +26,10 @@ dotnet add StudentApp.Domain.Test/StudentApp.Domain.Test.csproj reference Studen
  
  Hint: There are several ways to test this. Here are some things to consider:
  1. We could create one test, that tests the totality of the sorting method 
- (i.e.: create an expected result list where all sorting criteria cases are represented by one student, scramble this list into a new list, sort it; the students in the sorted list should be in the same order as the expected list)
- The benefit of this test is that we are certain that the total sorting is correct. 
- The downside is that we cannot pinpoint a mistake when we implement our sort incorrectly.
- 2. We could create several tests, where we assert the order of each element respectively to its successor
- (i.e.: use the same list as step 1, but for each element in the list, we generate a test: Student A should be before Student B, because the student's grades are higher, etc...)
+    (i.e.: create an expected result list where all sorting rules cases are represented by one student, scramble this list into a new list, sort it; the students in the sorted list should be in the same order as the expected list)
+    The benefit of this test is that we are certain that the total sorting is correct. 
+    The downside is that we cannot pinpoint a mistake when we implement our sort incorrectly.
+ 2. We could create several tests, where we assert that an element will always be before the one that is expected to be as last.
+    (i.e.: use the same students as step 1, but for each student, we generate a test: Student A should be before Student B, because the student's grades are higher, etc...)
+    The benefit of this test is that we can pinpoint each sorting rule. If we breake a specific sorting rule, it will be easier to identify which rule was broken.
+    The downside of these tests is that we cannot be sure if all rules are being respected. That is why we created a supplementary test (see point 1.)
