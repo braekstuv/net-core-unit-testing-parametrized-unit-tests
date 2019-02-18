@@ -13,7 +13,7 @@ namespace StudentApp.Domain
             Year = year;
         }
 
-        private void AddStudents(IEnumerable<Student> students){
+        public void AddStudents(IEnumerable<Student> students){
             _students.AddRange(students);
         }
     }
